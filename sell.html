@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="mb-3">
+            {% if compnames|length%}
+
+        <select name="symbol" id="symbol">
+            <option selected disabled>Select</option>
+            {% for names in compnames %}
+            <option value="{{names}}">{{names|upper}}</option>
+            {% endfor %}
+
+
+        </select>
+        </div>
+        <div>
+            <input autocomplete="off" class="form-control mx-auto w-auto" autofocus placeholder="Share" id="shares" name="shares" type="number">
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+
+    {% else %}
+            <p style="font-size:30px; font-weight:bold;">You have no shares to <u>sell</u>.</p>
+    {%endif%}
+{% endblock %}

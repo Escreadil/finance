@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h3 style="color:darkblue">Search Company</h3>
+    <div>
+        <form action="/quote" method="post" style="padding:10px">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" type="text" >
+            <br>
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        
+    </div>
+{% endblock %}

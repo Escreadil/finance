@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <form action="/check" method="post">
+                    <div class="col-12">
+                    <input autocomplete="off" class="form-control mx-auto w-auto" autofocus placeholder="Symbol" id="symbol" name="symbol" type="text">
+                    </div>
+                    <div class="col-12" style="padding:12px;">
+                    <button class="btn btn-outline-dark custom" type="submit" name="curprice" id="curprice" type="number">Check Current Price</button>
+                    </div>
+                </form>
+                <form action="/buy" method="post">
+                    <div class="row">
+                        <strong style="font-size:25px, padding:20px;">Company</strong>
+                        </div>
+                    <div class="col-12">
+                        <input autocomplete="off" class="form-control mx-auto w-auto" autofocus placeholder="Symbol" id="symbol2" name="symbol2" type="text">
+                        </div>
+                    <div class="row">
+                        <strong style="font-size:25px, padding:20px;">Share</strong>
+                        </div>
+                    <div class="col-12">
+                        <input autocomplete="off" class="form-control mx-auto w-auto" autofocus placeholder="Amount" id="shares" name="shares" type="text">
+                        </div>
+                    <div class="col-12" style="padding:20px;">
+                        <button class="btn btn-success custom" type="submit" type="number">Buy</button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+
+{% endblock %}

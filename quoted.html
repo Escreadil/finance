@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <div>
+    <table class="table table-borderless">
+        {% for key, value in symbol.items() %}
+        <thead>
+            <tr>
+              <th scope="col">{{(key.split() | first | capitalize)}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{(value)}}</th>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+{% endblock %}

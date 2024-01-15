@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <div>
+    <h2 style="text-decoration-line:underline; margin-bottom:10px;">Welcome {{username}} </h2>
+    <strong>Total Cash in Account: ${{cash}}</strong>
+    </div>
+    <br>
+    <form action="/" method="POST">
+     <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Company Symbol</th>
+                <th scope="col">Share</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <div class="row">
+                {% for i in range(amount|length) %}
+            <tr>
+              <td>{{compname[i]}}</td>
+              <td>{{amount[i]}}</td>
+              <td>{{price[i]|usd}}</td>
+              <td>{{totalprice[i]|usd}}</td>
+            </tr>
+                {% endfor %}
+
+        </tbody>
+        </table>
+
+    </form>
+</div>
+<div class="position-relative" style="font-weight:bold; font-size:20px;">
+<div>
+   <span class="d-inline p-1">Cash</span>
+   <span class="d-inline p-1">{{spent|usd}}</span>
+</div>
+<div class="b-block p-2">
+   <span class="d-inline p-1">TOTAL</span>
+   <span class="d-inline p-1">{{before|usd}}</span>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <form action="/check" method="post">
+        <div style="padding:20px;">
+            <b>
+            {% if curprice %}
+                Current price is : {{curprice}}$
+            {% endif %}
+            </b>
+
+        </div>
+
+
+    </form>
+    <form action="/check" method="get">
+        <div>
+        <button class="btn btn-outline-dark btn-md" type="submit">
+            &larr; &nbsp; Back
+        </button>
+        </div>
+    </form>
+
+{% endblock %}

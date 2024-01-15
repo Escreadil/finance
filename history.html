@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <form action="/history">
+        <h2>Bought</h2>
+        <div style="padding:20px;">
+            <table class="table">
+                <thead class="table-dark">
+                    {% for i in range(x) %}
+                    <tr>
+                        <th scope="col">Company Symbol</th>
+                        <th scope="col">Share</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Total Cost</th>
+                        <th scope="col">Date</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <div class="row">
+
+                    <tr>
+                        <td>{{compname[i]}}</td>
+                        <td>{{amount[i]}}</td>
+                        <td>{{price[i]|usd}}</td>
+                        <td>{{totalprice[i]|usd}}</td>
+                        <td>{{date[i]}}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+                </table>
+    <h2>Sold</h2>
+                <div style="padding:20px;">
+                    <table class="table">
+                        <thead class="table-dark">
+                            {% for i in range(y) %}
+                            <tr>
+                                <th scope="col">Company Symbol</th>
+                                <th scope="col">Share</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Total Cost</th>
+                                <th scope="col">Date</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <div class="row">
+
+                            <tr>
+                                <td>{{compname2[i]}}</td>
+                                <td>{{amount2[i]}}</td>
+                                <td>{{price2[i]|usd}}</td>
+                                <td>{{totalprice2[i]|usd}}</td>
+                                <td>{{date2[i]}}</td>
+                            </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+                        </table>
+        </div>
+
+
+
+{% endblock %}
